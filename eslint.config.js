@@ -15,13 +15,23 @@ export default defineConfig([
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+      ...globals.browser,
+      process: {
+        env: true // <-- this allows process.env.REACT_APP_XXX
+      }
+    },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
     },
+    env: {
+    browser: true,
+    es2021: true,
+    node: true, // <- this allows `process`
+  },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },

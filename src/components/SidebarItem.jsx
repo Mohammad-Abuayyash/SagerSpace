@@ -1,6 +1,6 @@
 const SidebarItem = ({ icon, label, isActive, onClick }) => (
   <div
-    className={`flex flex-col items-center justify-center px-4 py-3 gap-2 w-full ${
+    className={`relative flex flex-col items-center justify-center px-4 py-3 gap-2 w-full ${
       isActive ? "active border-l-4 border-red-700" : ""
     }`}
     onClick={onClick}
